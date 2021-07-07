@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/app.css">
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
+<!--    <script src="/static/statecity.js"></script>-->
+    <title>Title</title>
+
+<style>
+
+    .root{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#307d6f;
+<!--    height:650px;-->
+
+    }
+
+    .subdiv{
+    width:500px;
+    height:auto;
+    margin-top:90px;
+    margin-bottom:30px;
+
+
+    padding:10px;
+
+    }
+     .subdiv input{
+
+    border-radius:20px;
+
+    }
+
+      .msg{
+      text-align:center;
+
+      }
+         .subdiv h3{
+        margin-top:20px;
+<!--    display:inline;-->
+    border:2px solid black;
+    font-size:40px;
+    margin-left: 100px;
+    color:black;
+    text-decoration: overline;
+    }
+
+
+</style>
+</head>
+<body>
+<form action="/subcatint" method="post" enctype="multipart/form-data">{% csrf_token %}
+<div class="root">
+    <div class="subdiv">
+            <h3 >Category Form </h3><br><br>
+
+
+
+<div class="form-group has-icon"><i class="icon-font-awesome"></i>
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Company ID" value="{{companyid}}"  readonly name="compid">
+
+ </div>
+
+        <div class="form-group has-icon"><i class="icon-user"></i>
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Category Name" name="catname">
+
+ </div>
+         <div class="form-group has-icon"><i class="icon-image"></i>
+    <input type="file" class="form-control form-control-lg" placeholder="upload logo" name="catlogo">
+            </div>
+
+
+        <div class="row">
+
+               <div class="form-group col">
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+               </div>
+
+            <div class="form-group  col">
+ <input type="reset" class="btn btn-primary btn-lg btn-block" value="Reset">
+            </div>
+
+
+      </div>
+ <div class="form-group has-icon msg" >
+     {{msg}}
+            </div>
+         </div>
+
+
+</div>
+
+</form>
+</body>
+<!--<script src="/static/js/app.js"></script>-->
+</html>

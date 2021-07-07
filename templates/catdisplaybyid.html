@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/app.css">
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
+<!--    <script src="/static/statecity.js"></script>-->
+    <title>Title</title>
+
+<style>
+
+    .root{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#307d6f;
+<!--    height:650px;-->
+
+    }
+
+    .subdiv{
+    width:500px;
+    height:auto;
+    margin-top:90px;
+    margin-bottom:30px;
+
+
+    padding:10px;
+
+    }
+     .subdiv input{
+
+    border-radius:20px;
+
+    }
+
+      .msg{
+      text-align:center;
+
+      }
+
+
+</style>
+</head>
+<body>
+<form action="/subcatdisplaybyid" method="get" >
+<input type="hidden" name="cid" value="{{data.1}}">
+    <div class="root">
+    <div class="subdiv">
+
+
+<div class="form-group has-icon"><i class="icon-font-awesome"></i>
+    <input type="text" class="form-control form-control-lg"
+       value="{{data.0}}"    placeholder="Company Id" name="compid">
+
+ </div>
+
+        <div class="form-group has-icon"><i class="icon-user"></i>
+    <input type="text" class="form-control form-control-lg"
+          value="{{data.2}}"  placeholder="Category Name" name="catname">
+
+ </div>
+         <div class="row">
+
+               <div class="form-group col">
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save Edited" name="btn">
+               </div>
+
+            <div class="form-group  col">
+ <input type="submit" class="btn btn-primary btn-lg btn-block" value="DELETE" name="btn">
+            </div>
+
+
+      </div>
+
+
+
+</div>
+</div>
+</form>
+</body>
+<!--<script src="/static/js/app.js"></script>-->
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product Picture</title>
+</head>
+<body>
+<center>
+    <h3>Edit Product Picture</h3><br><br>
+    <form action="/editproductpicture" method="post" enctype="multipart/form-data"> {% csrf_token %}
+    <input type="hidden" value="{{ data.0 }}" name="cid">
+     <img src="/static/{{ data.1 }}" width="150" height="150"><br><br>
+    <input type="file" name="productpicture" required><br><br>
+    <input type="submit">
+    </form>
+</center>
+</body>
+</html>

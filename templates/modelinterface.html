@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/static/project.js"></script>
+    <title>Title</title>
+
+<style>
+
+    .root{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#307d6f;
+<!--    height:650px;-->
+
+    }
+
+    .subdiv{
+    width:500px;
+    height:auto;
+    margin-top:90px;
+    margin-bottom:30px;
+
+
+    padding:10px;
+
+    }
+     .subdiv input{
+
+    border-radius:20px;
+
+    }
+
+      .msg{
+      text-align:center;
+
+      }
+
+
+</style>
+</head>
+<body>
+<form action="/submodelint" method="post" enctype="multipart/form-data">{% csrf_token %}
+<div class="root">
+    <div class="subdiv">
+
+
+<div class="form-group has-icon"><i class="icon-font-awesome"></i>
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Company ID" value="{{companyid}}"  readonly name="compid">
+
+ </div>
+        <div class="form-group has-icon col">
+                <select class="form-control form-control-lg" id="categoryid" name="catid">
+                    <option>--Category Id--</option>
+
+                </select>
+            </div>
+
+        <<div class="form-group has-icon col">
+                <select class="form-control form-control-lg" id="subcategoryid" name="subcatid">
+                    <option>--Sub Category Id--</option>
+
+                </select>
+            </div>
+
+
+
+        <div class="form-group has-icon"><i class="icon-user"></i>
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Model Name" name="modelname">
+
+ </div>
+        <div class="form-group has-icon"><i class="icon-user"></i>
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Model Description" name="modeldesc">
+
+ </div>
+
+
+
+        <div class="row">
+
+               <div class="form-group col">
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+               </div>
+
+            <div class="form-group  col">
+ <input type="reset" class="btn btn-primary btn-lg btn-block" value="Reset">
+            </div>
+
+
+      </div>
+ <div class="form-group has-icon msg" >
+     {{msg}}
+            </div>
+
+</div>
+</div>
+</form>
+</body>
+<!--<script src="/static/js/app.js"></script>-->
+</html>

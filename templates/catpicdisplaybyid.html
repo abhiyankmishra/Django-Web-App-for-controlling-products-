@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+   body{
+<!--    display:flex;-->
+    justify-content:center;
+    align-items:center;
+    background-color:#307d6f;
+<!--    height:650px;-->
+
+    }
+
+
+    .subdiv{
+    width:696px;
+    height:auto;
+    margin-top:20px;
+    margin-bottom:30px;
+    border:3px dashed black;
+
+
+    padding:10px;
+
+    }
+    .maindiv {
+        margin-top:90px;
+
+<!--    border:2px solid black;-->
+    }
+
+    .maindiv h3{
+        margin-top:20px;
+<!--    display:inline;-->
+    border:2px solid black;
+    font-size:40px;
+    }
+<!--     .subdiv input{-->
+
+<!--    border-radius:20px;-->
+
+<!--    }-->
+
+<!--      .msg{-->
+<!--      text-align:center;-->
+
+<!--      }-->
+
+.subdiv img{
+
+border:3px solid white;
+
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Picture</title>
+</head>
+<body>
+<center>
+    <div class="maindiv">
+    <h3 >Edit     Category    Picture </h3><br><br>
+    <div class="subdiv">
+
+    <form action="/subcatpicdisplaybyid" method="post" enctype="multipart/form-data">{% csrf_token %}
+       <input type="hidden" value="{{data.0}}" name="cid">
+        <img src="/static/{{data.1}}" width="150" height="150"><br><br>
+
+        <input type="file" name="logo"  required> <br><br>
+
+        <input type="submit">
+
+    </form>
+    </div>
+    </div>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/app.css">
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .maindiv{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        }
+
+        .subdiv{
+        width:800px;
+
+        }
+    </style>
+    <!-- Js -->
+    <!--
+    --- Head Part - Use Jquery anywhere at page.
+    --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
+    -->
+    <script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+ </head>
+<body>
+
+<br><br>
+<div class="maindiv">
+<div class="subdiv">
+ <div class="container-fluid animatedParent animateOnce my-3">
+        <div class="animated fadeInUpShort">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card no-b shadow">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover ">
+
+                                     <thead>
+                                         <tr>
+                                            <th>Icon</th>
+                                            <th>Company Name</th>
+                                            <th>Category Name</th>
+
+                                         </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for row in data%}
+
+                                    <tr class="no-b">
+                                        <td class="w-10">
+                                           <a href="/catpicdisplaybyid?cid={{row.1}}&pic={{row.3}}">  <img src="/static/{{row.3}}" width="50" height="50"></a>
+                                        </td>
+                                        <td>
+                                            <h6>{{row.4}}</h6>
+
+                                        </td>
+                                        <td>{{row.2}}</td>
+<!--                                        <td>-->
+<!--                                            <span><i class="icon-phone"></i>{{row.3}}</span><br>-->
+<!--                                            <span><i class="icon-envelope-o"></i>{{row.4}}</span>-->
+
+<!--                                        </td>-->
+
+<!--                                        <td>-->
+<!--                                            <span><i class="icon-map"></i>{{row.6}}</span><br>-->
+<!--                                            <span>{{row.12}},{{row.13}},{{row.9}}</span>-->
+
+<!--                                        </td>-->
+                                        <td>
+                                            <a href="/catdisplaybyid?cid={{row.1}}" class="btn-fab btn-fab-sm btn-primary shadow text-white"><i class="icon-pencil"></i></a>
+<!--                                            <a href="/deletebyid?cid={{row.0}}" class="btn-fab btn-fab-sm btn-primary shadow text-white"><i class="icon-delete"></i></a>-->
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
+</div>
+</div>
+</body>
+<!--/#app -->
+<script src="/static/js/app.js"></script>
+</html>

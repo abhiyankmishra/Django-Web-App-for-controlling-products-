@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .root{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .subdiv{
+      width:550px;
+      height: auto;
+      margin-top:150px;
+      background:#576574;
+      border:solid #576574;
+      padding:10px;
+      border-radius:10px;
+      box-shadow: 0px 0px 20px 0px #0a0a0a;
+
+
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/static/css/app.css">
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+</script>
+
+    <title> Edit Product Form</title>
+</head>
+<body>
+<form action="/editdeleteproductrecord" method="get" >
+    <input type="hidden" name="productid" value="{{ data.0 }}">
+<div class="root">
+    <div class="subdiv">
+
+
+
+
+         <div class="row">
+            <div class="form-group has-icon col "><i class="icon-id-badge"></i>
+                            <input type="text" value="{{ data.1 }}" class="form-control form-control-lg"
+                                   placeholder="Company ID" name="companyid">
+            </div>
+            <div class="form-group has-icon col"><i class="icon-id-badge"></i>
+                            <input type="text" value="{{ data.2 }}" class="form-control form-control-lg"
+                                   placeholder="Category ID" name="categoryid">
+            </div>
+        </div>
+         <div class="row">
+            <div class="form-group has-icon col "><i class="icon-id-badge"></i>
+                            <input type="text" value="{{ data.3 }}" class="form-control form-control-lg"
+                                   placeholder="Sub Category ID" name="subcategoryid">
+            </div>
+            <div class="form-group has-icon col"><i class="icon-id-badge"></i>
+                            <input type="text" value="{{ data.4 }}" class="form-control form-control-lg"
+                                   placeholder="Model ID" name="modelid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group has-icon col "><i class="icon-info2"></i>
+                            <input type="text" value="{{ data.5 }}" class="form-control form-control-lg"
+                                   placeholder="Product Name" name="productname">
+            </div>
+            <div class="form-group has-icon col"><i class="icon-attach_money"></i>
+                            <input type="text" value="{{ data.6 }}" class="form-control form-control-lg"
+                                   placeholder="Product Price" name="productprice">
+            </div>
+        </div>
+
+
+         <div class="form-group has-icon"><i class="icon-date_range"></i>
+                            <input type="date" value="{{ data.7 }}" class="form-control form-control-lg"
+                                   placeholder="Manufacturing Date" name="mfgdate">
+        </div>
+
+
+        <div class="row">
+            <div class="form-group  col col-lg-3 ">
+                <input type="submit" class="btn btn-dark" value="Edit" name="btn">
+            </div>
+            <div class="form-group  col col -lg-9">
+                <input type="submit" class="btn btn-dark" value="Delete" name="btn">
+            </div>
+        </div>
+
+    </div>
+</div>
+</form>
+
+</body>
+</html>
